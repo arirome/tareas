@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href=" https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">  
+    <link rel="stylesheet" href="style.css">
+    <title>Lista de Tareas</title>
+
+  </head>
+  <body>    
+    <div class="page-content page-container" id="page-content">
+        <div class="padding">
+            <div class="row container d-flex justify-content-center">
+                <div class="col-lg-8 grid-margin stretch-card">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h3 >Lista de Tareas</h3>                                    
+                                </div>
+                                <div class="col-md-4 text-right"> <button class="btn btn-success"  href="#" data-toggle="modal" data-target="#modal__agregar" >Agregar</button> </div>
+                               
+                            </div>
+                            <div class="table-responsive">
+                                <table id="htmltable" class="table"></table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>    
+ <!-- modal-->
+ <div class="modal fade" id="modal__agregar" data-backdrop="static" tabindex="-1" role="dialog"
+ aria-labelledby="staticBackdropLabel" aria-hidden="true">
+ <div class="modal-dialog" role="document">
+   <div class="modal-content">
+     <div class="modal-header" >
+       <h4 class="modal-title" id="staticBackdropLabel">Registrarse</h4>
+       <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+         <span aria-hidden="true">&times;</span>
+       </button>
+     </div>
+     <div class="modal-body">
+       <form id="form__agregar">
+
+         <div class="form-group" style="text-align: center;" >
+           <label for="email"> APELLIDO Y NOMBRE </label>
+           <input type="text" class="form-control" id="apenom">
+         </div>
+         <div class="form-group" style="text-align: center;"  >
+           <label for="descrip">DESCRIPCION DE LA TAREA </label>
+           <textarea class="form-control" id="descriptarea" rows="3"></textarea>
+       
+         </div>
+         <div class="form-group" style="text-align: center;" >
+           <label for="estados">ESTADO</label>
+           <select class="custom-select my-1 mr-srm-3" id="estado">
+          
+          <option value= "1">pendiente</option>
+          <option value="2">en proceso</option>
+          <option value="3">completado</option>
+         </select>
+        
+           
+         </div>
+         <div class="alert alert-primary" role="alert" name="alertregis" hidden></div>
+
+         <!-- alertaformulario -->
+         <div class="alert alert-success" name="alertregis" id="alertregis" role="alert" hidden> Formulario
+           completado existosamente.</div>
+       </form>
+     </div>
+     <div class="alert alert-primary" role="alert" name="alerttarea" hidden></div>
+     <div class="modal-footer">
+     
+       <button type="button" class="btn btn-secondary" data-dismiss="modal">Salir</button>
+       <button type="button" class="btn btn-primary" onclick="guardartareas()">guardar</button>
+     </div>
+   </div>
+ </div>
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"></script>
+    <script src="tareas.js" ></script>
+  </body>
+</html>
